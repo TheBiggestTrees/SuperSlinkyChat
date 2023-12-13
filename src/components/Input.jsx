@@ -83,11 +83,11 @@ const Input = () => {
       <div className="send flex gap-3">
         <input onChange={e => setImg(e.target.files[0])} type="file" style={{display: 'none'}} id='fileUpload' />
         <label htmlFor='fileUpload' className='h-6 w-6 cursor-pointer'>
-          <PaperClipIcon className='h-6 w-6' />
+          <PhotoIcon className='h-6 w-6'/>
         </label>
         <input type="file" style={{display: 'none'}} id='pictureUpload' />
         <label htmlFor='pictureUpload' className='h-6 w-6 cursor-pointer'>
-          <PhotoIcon className='h-6 w-6'/>
+          <PaperClipIcon className='h-6 w-6' />
         </label>
       
         <button onClick={handleSend}><PaperAirplaneIcon className='h-6 w-6'/></button>

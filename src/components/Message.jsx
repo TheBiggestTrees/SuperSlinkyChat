@@ -14,14 +14,20 @@ const Message = ({message}) => {
 
   return (
     <>
-    <div ref={ref} className={`message ${message.senderId === currentUser.uid && 'owner'} max-h-[200px] flex gap-4 border-t-[1px] border-gray-500 pt-4`}>
-      <div className="messageInfo flex flex-col text-gray-500 mb-4 items-center">
+    <div ref={ref} className={`message max-h-fit flex gap-6 border-t-[1px] border-gray-500 pt-4`}>
+      <div className="messageInfo flex flex-col text-gray-500 w-[56px] justify-end pb-6">
         <img src={message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} className='w-12 h-12 rounded-full' alt="" />
-        <span>just now</span>
       </div>
-      <div className="messageContent max-w-[80%] flex flex-col gap-3 pb-6">
-        <p>{message.text}</p>
-        {message.img && <img className='w-auto h-[80%]' src={message.img} alt="" />}
+      <div className="messageContent flex flex-col pb-6">
+        
+        <p className=' w-[32rem] break-words'>{message.text}</p>
+        
+        {message.img && <div className='h-auto w-48'><img src={message.img} alt="" /></div>}
+        
+        <div className='text-xs font-extralight p-0 m-0 text-gray-500' >{message.date.toDate().toLocaleDateString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit' })}</div>
+
+        <div className='text-xs font-extralight p-0 m-0 text-gray-500'>{message.date.toDate().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false, })}</div>
+        
       </div>
     </div>
     </>
