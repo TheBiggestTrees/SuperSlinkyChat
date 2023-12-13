@@ -1,2 +1,2 @@
 # SuperSlinkyChat
-Chat app built with React and Firebase
+Chat app built with React, Firebase, and Tailwind using DaisyUI
