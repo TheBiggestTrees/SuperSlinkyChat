@@ -9,8 +9,8 @@ const Chat = () => {
   const { data } = useContext(ChatContext);
 
   return (
-      <div className='chat flex flex-col flex-[4] p-0 m-0'>
-        <div className="chatInfo flex items-center h-20 justify-between p-4 bg-secondary w-full">
+      <div className='chat flex flex-col itemscen flex-[4] p-0 m-0'>
+        <div className="chatInfo flex items-center h-[70px] justify-between p-4 bg-secondary w-full">
           <span className='font-bold'>{data.user?.displayName}</span>
           <div className='chatIcons flex gap-3'>
               <button>

@@ -20,7 +20,7 @@ const Message = ({message}) => {
       </div>
       <div className="messageContent flex flex-col pb-6">
         
-        <p className=' w-[32rem] break-words'>{message.text}</p>
+        <p className=' w-56 md:w-[40rem] break-words'>{message.text}</p>
         
         {message.img && <div className='h-auto w-48'><img src={message.img} alt="" /></div>}
         

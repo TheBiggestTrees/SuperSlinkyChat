@@ -5,7 +5,7 @@ import Chats from './Chats'
 
 const Sidebar = () => {
   return (
-    <div className='sidebar bg-secondary flex flex-col flex-1'>
+    <div className='sidebar bg-secondary flex flex-col w-[70px] md:w-72 items-center md:items-start'>
       <Navbar />
       <Search />
       <Chats />

@@ -82,15 +82,15 @@ const Input = () => {
       <input value={text} onKeyDown={handleKey} onChange={e => setText(e.target.value)} type="text" className='w-full p-4 h-3 outline-none' placeholder='Type something...' />
       <div className="send flex gap-3">
         <input onChange={e => setImg(e.target.files[0])} type="file" style={{display: 'none'}} id='fileUpload' />
-        <label htmlFor='fileUpload' className='h-6 w-6 cursor-pointer'>
-          <PhotoIcon className='h-6 w-6'/>
+        <label htmlFor='fileUpload' className='h-6 w-6 hover:h-[26px] hover:w-[26px] cursor-pointer'>
+          <PhotoIcon />
         </label>
         <input type="file" style={{display: 'none'}} id='pictureUpload' />
-        <label htmlFor='pictureUpload' className='h-6 w-6 cursor-pointer'>
-          <PaperClipIcon className='h-6 w-6' />
+        <label htmlFor='pictureUpload' className='h-6 w-6 hover:h-[26px] hover:w-[26px] cursor-pointer'>
+          <PaperClipIcon />
         </label>
       
-        <button onClick={handleSend}><PaperAirplaneIcon className='h-6 w-6'/></button>
+        <button onClick={handleSend}><PaperAirplaneIcon className='h-6 w-6 hover:h-[26px] hover:w-[26px] '/></button>
       </div>
     </div>
   )

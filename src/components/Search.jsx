@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { db } from '../firebase';
 import { collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore';
 import { AuthContext } from '../context/AuthContext';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const Search = () => {
 
@@ -82,15 +83,25 @@ const Search = () => {
   return (
     <>
     <div className='search'>
-      <div className="searchForm p-[3px] border-b-[1px] border-b-zinc-700 "><input value={username} onKeyDown={handleKey} onChange={e=>setUsername(e.target.value)} className='bg-transparent shadow-none text-primary-focus outline-none placeholder-primary-foucs' type="text" placeholder='search for user'></input></div>
+      <div className="searchForUser flex items-center justify-center md:justify-start w-[70px] md:w-72 p-[3px] border-b-[1px] border-b-zinc-700 ">
+        <label htmlFor="search">
+          <MagnifyingGlassIcon className='w-6'/>
+        </label>
+          <input value={username} onKeyDown={handleKey} onChange={e=>setUsername(e.target.value)} className='bg-transparent shadow-none text-primary-focus outline-none placeholder-primary-foucs' type="text" placeholder='Search for User...' id="search"></input>
+      </div>
     </div>
+
     {err && <span>No one found</span>}
-    {user && <div onClick={handleSelect} className="userChat cursor-pointer border-b-2 border-b-zinc-600 p-2 flex items-center gap-4 hover:bg-secondary-focus">
+    {user && <div onClick={handleSelect} className="userChat cursor-pointer border-b-2 border-b-zinc-600 p-2 flex w-full justify-center md:justify-start items-center gap-4 hover:bg-secondary-focus">
+
     <img className='bg-white h-10 w-10 rounded-full object-cover' src={user.photoURL} alt=''></img>
-        <div className="userChatInfo">
+
+        <div className="userChatInfo hidden md:block">
             <span className='font-bold'>{user.displayName}</span> 
         </div>
-      </div>}
+
+      </div>
+      }
     </>
   )
 }
